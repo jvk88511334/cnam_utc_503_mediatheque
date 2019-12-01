@@ -1,4 +1,4 @@
-interface Identifier{
+export interface Identifier{
     readonly identifier: number;
     getIdentifier(): number;
 }
@@ -24,6 +24,22 @@ export class DiscId implements Identifier{
     readonly identifier: number;
 
     constructor(identifier: number) {
+        this.identifier = identifier;
+    }
 
+    getIdentifier(): number {
+        return this.identifier;
+    }
+}
+
+export class EIRD implements Identifier{
+    readonly identifier: number;
+
+    constructor(identifier: number) {
+        this.identifier = identifier;
+    }
+
+    getIdentifier(): number {
+        return this.identifier;
     }
 }
