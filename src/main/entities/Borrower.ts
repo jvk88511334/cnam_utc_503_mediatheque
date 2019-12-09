@@ -7,7 +7,7 @@ export class Borrower{
     private firstname: string;
     private email: string;
 
-    private readonly _borrowingList: Borrowing[];
+    private  _borrowingList: Borrowing[];
 
     // Constructor
     constructor(id: number, name: string, firstname: string, email: string) {

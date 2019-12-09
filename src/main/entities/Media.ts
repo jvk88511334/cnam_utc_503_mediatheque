@@ -7,8 +7,17 @@ export class Media<T extends MediaType, U extends Identifier>{
     private _exemplariesNumber: number; //le nombre d'exemplaires disponibles
     private _availableDate: Date; //la date de disponibilité
 
-//Methods
+    constructor(mediaType: T, identifier: U, exemplariesNumber: number, availableDate: Date) {
+        this.mediaType = mediaType;
+        this.identifier = identifier;
+        this._exemplariesNumber = exemplariesNumber;
+        this._availableDate = availableDate;
+    }
 
+//Methods
+    /**
+     * Permet de retourner la description de l'exemplaire
+     */
     public description(): string{
         return this.identifier.getIdentifier() + this.mediaType.description() + this._exemplariesNumber;
     }
@@ -27,5 +36,19 @@ export class Media<T extends MediaType, U extends Identifier>{
      */
     set availableDate(value: Date) {
         this._availableDate = value;
+    }
+
+    /**
+     * Permet d'obtenir le nombre d'exemplaires disponible pour ce media
+     */
+    get exemplariesNumber(): number {
+        return this._exemplariesNumber;
+    }
+
+    /**
+     * Permet d'obtenir la date de disponibilité pour ce media
+     */
+    get availableDate(): Date {
+        return this._availableDate;
     }
 }

@@ -1,6 +1,8 @@
 import {Media} from "./Media";
 import {Borrower} from "./Borrower";
 import {Borrowing} from "./Borrowing";
+import {Identifier} from "./subentities/Identifier";
+import {MediaType} from "./subentities/MediaType";
 
 export class Mediatheque {
     // attributes
@@ -15,7 +17,11 @@ export class Mediatheque {
     /**
      * Méthode permettant d'ajouter un emprunteur
      */
-    public addBorrower(){
-        this.borrowersList.push();
+    public addBorrower(borrower: Borrower){
+        this.borrowersList.push(borrower);
+    }
+
+    public addMediaToList(media: Media<MediaType, Identifier>){
+        this.mediaList.push(media);
     }
 }
