@@ -51,4 +51,6 @@ export class Media<T extends MediaType, U extends Identifier>{
     get availableDate(): Date {
         return this._availableDate;
     }
+
+    //TODO methode permettant de retourner ce media à partir d'un identifiant
 }

@@ -1,7 +1,6 @@
 #ignore le dossier de build
 build
-#ignore le dossier de test
-src/test/
+#ne pas ignorer le dossier de test
 .DS_Store
 #ignore les modules node
 node_modules

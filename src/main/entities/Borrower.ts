@@ -2,8 +2,8 @@ import {Borrowing} from "./Borrowing";
 
 export class Borrower{
     // Attributes
-    private id: number;
-    private name: string;
+    private _id: number;
+    private _name: string;
     private firstname: string;
     private email: string;
 
@@ -11,8 +11,8 @@ export class Borrower{
 
     // Constructor
     constructor(id: number, name: string, firstname: string, email: string) {
-        this.id = id;
-        this.name = name;
+        this._id = id;
+        this._name = name;
         this.firstname = firstname;
         this.email = email;
         this._borrowingList = []; //A la creation de l'emprunteur, sa liste est vide
@@ -23,7 +23,15 @@ export class Borrower{
         return this._borrowingList;
     }
 
-    // Methods
+    get id(): number {
+        return this._id;
+    }
+
+    get name(): string {
+        return this._name;
+    }
+
+// Methods
 
     /**
      * Methode permettant d'ajouter un emprunt à l'emprunteur
@@ -31,4 +39,6 @@ export class Borrower{
     addBorrowing(paramBorrowing: Borrowing){
         this._borrowingList.push(paramBorrowing);
     }
+
+
 }
