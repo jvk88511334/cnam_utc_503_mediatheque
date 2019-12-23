@@ -15,7 +15,7 @@ export class Borrower{
         this._name = name;
         this.firstname = firstname;
         this.email = email;
-        this._borrowingList = []; //A la creation de l'emprunteur, sa liste est vide
+        this._borrowingList = new Array<Borrowing>(); //A la creation de l'emprunteur, sa liste est vide
     }
 
     // Getters and setters

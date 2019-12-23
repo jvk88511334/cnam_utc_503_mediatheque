@@ -11,3 +11,19 @@ execution dans le terminal
 
 Port de l'application en local
 >8081
+
+En cas de pull du projet sur une nouvelle machine
+Se placer avec un terminal dans le repertoire courant du projet
+>sudo apt install npm
+
+>sudo apt install node-typescript
+
+>npm install
+
+Invalider le cache et rédemarrer son IDE au besoin
+
+>tsc
+
+>npm run start
+
+Pour automatiser les scripts, il suffit de manipuler le fichier package.json
