@@ -3,23 +3,28 @@ import {Identifier} from "./subentities/Identifier"
 
 export class Media<T extends MediaType, U extends Identifier>{
     private mediaType: T; //Le type de media: Livre, CD, DVD
-    private identifier: U; //L'identifiant ISBN, DiscId, EIRD
+    private _identifier: U; //L'identifiant ISBN, DiscId, EIRD
     private _exemplariesNumber: number; //le nombre d'exemplaires disponibles
-    private _availableDate: Date; //la date de disponibilité
+    private _availableDate: Date; //la date de disponibilité (sera un new Date() en cas de nouveau media)
+    private _exemplariesBorrowed: number; //le nombre d'exemplaires empruntés
 
-    constructor(mediaType: T, identifier: U, exemplariesNumber: number, availableDate: Date) {
+    //Constructor : créer un média
+
+    constructor(mediaType: T, identifier: U, exemplariesNumber: number, exemplariesBorrowed: number, availableDate: Date) {
         this.mediaType = mediaType;
-        this.identifier = identifier;
+        this._identifier = identifier;
         this._exemplariesNumber = exemplariesNumber;
         this._availableDate = availableDate;
+        this._exemplariesBorrowed = exemplariesBorrowed;
     }
 
-//Methods
+    //Methods
+
     /**
      * Permet de retourner la description de l'exemplaire
      */
     public description(): string{
-        return this.identifier.getIdentifier() + this.mediaType.description() + this._exemplariesNumber;
+        return this._identifier.getIdentifier() + this.mediaType.description() + this._exemplariesNumber;
     }
 
     /**
@@ -28,6 +33,21 @@ export class Media<T extends MediaType, U extends Identifier>{
      */
     set exemplariesNumber(value: number) {
         this._exemplariesNumber = value;
+    }
+
+    /**
+     * Permet de modifier le nombre d'exemplaires empruntés
+     * @param value le nombre d'exemplaires empruntés
+     */
+    set exemplariesBorrowed(value: number) {
+        this._exemplariesBorrowed = value;
+    }
+
+    /**
+     * Permet de connaitre actuellement le nombre d'exemplaires empruntés
+     */
+    get exemplariesBorrowed(): number {
+        return this._exemplariesBorrowed;
     }
 
     /**
@@ -52,5 +72,12 @@ export class Media<T extends MediaType, U extends Identifier>{
         return this._availableDate;
     }
 
-    //TODO methode permettant de retourner ce media à partir d'un identifiant
+    /**
+     * Permet d'obtenir l'identifiant unique de ce media
+     */
+    get identifier(): U {
+        return this._identifier;
+    }
+
+//TODO methode permettant de retourner ce media à partir d'un identifiant
 }
