@@ -101,11 +101,11 @@ export class Mediatheque {
     /**
      * Permet de rendre un media pour un emprunteur
      * @param index l'identifiant unique du media a restituer
-     * @param id l'identifiant de l'emprunteur
      */
     public returnMediaForABorrower(index: number): void{
-        let media = this.mediaList.filter(x => index.toString().indexOf(x.identifier.getIdentifier().toString()) > -1)[0];
         let borrowing = this.borrowingsList.filter(x => index.toString().indexOf(x.media.identifier.getIdentifier().toString()) > -1)[0];
-        this.borrowingsList.splice(this.borrowingsList.indexOf(media.identifier.getIdentifier().toString()))
+        this.borrowingsList.splice(this.borrowingsList.indexOf(borrowing), 1);
     }
+
+    //Envoyer un email a tous les emprunteurs avec la liste des emprunts en retard
 }

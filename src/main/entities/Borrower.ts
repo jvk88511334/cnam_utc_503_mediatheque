@@ -39,6 +39,4 @@ export class Borrower{
     addBorrowing(paramBorrowing: Borrowing){
         this._borrowingList.push(paramBorrowing);
     }
-
-
 }
