@@ -13,6 +13,6 @@ describe('Test d\'export de la mediatheque en JSON', () => {
     //Création d'un type de media : CD
     let mediatype1 = new MediaTypeCD('Reworked', 'Snow Patrol', GendersCD.Rock, 'EPIC', 90);
     //Création d'un média
-    //TODO continuer..
+    let media1 = new Media()
 
 });

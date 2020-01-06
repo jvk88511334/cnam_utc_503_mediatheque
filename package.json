@@ -38,7 +38,6 @@
     "eslint": "^6.8.0",
     "eslint-config-google": "^0.14.0",
     "jasmine-core": "^3.5.0",
-    "jest": "^24.9.0",
     "mocha": "^6.2.2",
     "ts-node": "^8.5.4"
   }
