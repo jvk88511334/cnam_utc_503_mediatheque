@@ -27,3 +27,8 @@ Invalider le cache et rédemarrer son IDE au besoin
 >npm run start
 
 Pour automatiser les scripts, il suffit de manipuler le fichier package.json
+
+Note à l'attention du prof
+Pour les tests unitaires, il faut parametrer la configuration pour lancer un test unitaire avec mocha et surtout pas jest comme ceci :
+
+ ![mochaParam](./mochaparam.PNG)

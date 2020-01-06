@@ -20,7 +20,7 @@ describe('test du contrôle d\'une date en retard', () => {
     //Création d'un emprunt
     let borrowing = new Borrowing(media, borrower, new Date());
     //Création d'un emprunt et recule de 30j sa date d'emprunt
-        let currentDate: Date = new Date();
+        let currentDate = new Date();
         let currentDate30DaysBack = currentDate.setDate(currentDate.getDate() - 30);
         let dateTwoMonthBack = new Date(currentDate30DaysBack);
     let borrowing2 = new Borrowing(media, borrower, dateTwoMonthBack);

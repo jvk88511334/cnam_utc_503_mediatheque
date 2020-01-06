@@ -8,15 +8,16 @@ export class JsonConverter {
      * @param object l'objet typescript à transformer en JSON
      * @link https://alligator.io/js/json-parse-stringify/
      */
-    public createJsonFromObject(object: Object): string{
+    public static createJsonFromObject(object: Object): string{
         const myObjectInString = JSON.stringify(object);
         console.log(myObjectInString); //Affichage console du JSON
         return myObjectInString;
     }
 
-    public createMediathequeObjectFromJson(json: string, mediatheque: Mediatheque): void{
+    public static createMediathequeObjectFromJson(json: string, mediatheque: Mediatheque): void{
         JSON.parse(json, (key, value) => {
-            //TODO construire l'objet JSON en parsant les keys du JSON récupéré : faire un TU
+            //TODO construire l'objet JSON en parsant les keys du JSON récupéré
+
         })
     }
 }
