@@ -7,6 +7,33 @@ Programmation POO et fonctionnelle sur utc503 à livrer pour le 11/01/2020 [etud
 
 Se rendre dans le wiki pour les étapes d'initialisation du projet sur sa machine locale !
 
+Sur mac
+-> telecharger d'abord git, l'installer, puis une jdk java et l'installer
+
+https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Installation-de-Git
+
+https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+Installer npm
+
+https://treehouse.github.io/installation-guides/mac/node-mac.html
+
+Puis
+
+>npm install
+
+Lancer ensuite les commandes suivantes
+
+Taper
+
+>tsc --version
+
+pour controler la bonne installation de tsc, sinon l'installer
+
+Ensuite lancer le test de cette façon
+
+![lancementTest](./Lancement_Test.png)
+
 compilation dans le terminal
 >tsc
 
@@ -36,3 +63,4 @@ Note à l'attention du prof
 Pour les tests unitaires, il faut parametrer la configuration pour lancer un test unitaire avec mocha et surtout pas jest comme ceci :
 
  ![mochaParam](./mochaparam.PNG)
+ 
