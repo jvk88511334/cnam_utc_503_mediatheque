@@ -30,6 +30,6 @@ describe('Test d\'export de la mediatheque en JSON', () => {
     //Export en JSON de la mediatheque
     let jsonMediatheque = JsonConverter.createJsonFromObject(mediatheque);//Va afficher dans la console le JSON
     //Chargement d'une mediatheque en objet a partir d'une string JSON
-
+    JsonConverter.createMediathequeObjectFromJson(jsonMediatheque, new Mediatheque());
 
 });

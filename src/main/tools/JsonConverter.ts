@@ -14,10 +14,14 @@ export class JsonConverter {
         return myObjectInString;
     }
 
-    public static createMediathequeObjectFromJson(json: string, mediatheque: Mediatheque): void{
-        JSON.parse(json, (key, value) => {
-            //TODO construire l'objet JSON en parsant les keys du JSON récupéré
-
-        })
+    /**
+     * Méthode permettant de refabriquer la médiathèque à partir d'un JSON
+     * @param json le fichier JSON sous forme de chaine de caractères
+     * @param mediatheque l'objet médiathèque à retourner
+     */
+    public static createMediathequeObjectFromJson(json: string, mediatheque: Mediatheque): Mediatheque{
+        //Création d'un objet Mediatheque vide
+        mediatheque = JSON.parse(json);
+        return mediatheque;
     }
 }
